@@ -3,6 +3,33 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+### PID Controller
+ 
+A PID controller used in this project is a control loop feedback mechanism that continuously calculates the a cross-traction-error (cte), which is the distance between an actual car position on the road and a reference trajectory, and applies a correction based on proportional (P), integration (I), and derivative (D) terms.
+ 
+ 
+#### P (Proportional)
+*P* accounts for present values of the cte. For example, if the cte is large and positive, the control output will also be large and positive.
+ 
+#### I (Integration)
+*I* accounts for past values of the cte. For example, if the current output is not sufficiently strong, the integration of the cte will accumulate over time, and the controller will respond by applying a stronger action.
+ 
+#### D (Derivative)
+*D* accounts for possible future trends of the cte, based on the current rate of change. For example, continuing the P example above, when the large positive control output succeeds in brining the cte closer to zero, it also puts the process on a path to large negative error in the near future. In this case, the derivative turns negative and the D module reduces the strength of the action to prevent this overshoot.
+ 
+ 
+### Choosing Hyperparameters (P, I, D coefficients)
+To tune a PID, I chose the following steps:
+1. Set all gains to zero.
+2. Increase the P again until the response to a disturbance is steady oscillation.
+3. Increase the D gain until the oscillations go away.
+4. Repeat steps 2 and 3 until increasing the D gain does not stop the oscillations.
+5. Set P and D to the last stable values.
+6. Increase the I again util it brings the simulation to the setpoint with the number of oscillations desired.
+ 
+The final result is shown in the video linked below:
+
+
 ## Dependencies
 
 * cmake >= 3.5
