@@ -26,9 +26,10 @@ To tune a PID, I chose the following steps:
 4. Repeat steps 2 and 3 until increasing the D gain does not stop the oscillations.
 5. Set P and D to the last stable values.
 6. Increase the I again util it brings the simulation to the setpoint with the number of oscillations desired.
- 
-The final result is shown in the video linked below:
 
+Here's a link to my video result:
+
+[![link to my video result](https://img.youtube.com/vi/BJd2-9reXSY/0.jpg)](https://www.youtube.com/watch?v=BJd2-9reXSY)
 
 ## Dependencies
 
